@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Avaliação</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        select {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Avaliação</h1>
+
+    <form id="formAvaliacao" action="">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" required>
+
+        <label for="nota">Nota:</label>
+        <select id="nota" required>
+            <option value="">Selecione</option>
+            <option value="1">Ótimo</option>
+            <option value="2">Bom</option>
+            <option value="3">Regular</option>
+            <option value="4">Ruim</option>
+            <option value="5">Péssimo</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Event listener para o envio do formulário
+        document.getElementById("formAvaliacao").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            
+            var idade = document.getElementById("idade").value;
+            var nota = document.getElementById("nota").value;
+            
+            // Envie os dados para o backend Java utilizando AJAX ou outra técnica de sua preferência
+            
+            // Reinicie o formulário para permitir novas avaliações
+            document.getElementById("formAvaliacao").reset();
+        });
+    </script>
+</body>
+</html>
